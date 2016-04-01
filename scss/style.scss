@@ -2,98 +2,50 @@
 @import 'bourbon/bourbon';
 @import 'neat/neat.scss';
 
-//___ COLORS: ___________________________________
-
-
-
-
-//___ MIXINS: ___________________________________
-
-
-
-/*___________________ STYLES ___________________*/
-
-@import 'normalize/import-now';
-@import 'bourbon/bourbon';
-@import 'neat/neat.scss';
-
-//___ COLORS: ___________________________________
-
-$background:         #e8eded;
-$text:               #666e6e;
-$border:             #a8b2b1;
-$beer:               #F4B350;
-$description:        #F2F1EF;
-
-/*___________________ STYLES ___________________*/
-
-body { 
-   font-family: 'Open Sans', sans-serif;
-   background-color: $background;
-   color: $text;
-
-   .hidden { display: none; }
-
-   header {
-      display: block;
-      width: 100%;
-      background-color: white;
-      border-bottom: 1px solid $border;
-
-      .logo-wrapper {
-         padding: 1em 0;
-         width: 100%;
-         background-color: $beer;
-      }
-
-      div#main-logo {
-         display: block;
-         margin: 0 auto;
-         background-image: url('../img/beer-buddie.png');
-         background-repeat: no-repeat;
-         background-size: contain;
-         width: 300px;
-         height: 85px;
-      }
-
-      h1 { display: none; }
-
-      .input-wrapper {
-         position: relative;
-         margin: 0 auto;
-         max-width: 500px;
-         background-color: white;
-
-         input#search {
-            display: block;
-            width: 100%;
-            padding-left: 3em;
-            height: 4em;
-            border: 0;
-            outline: 0;
-
-            @include placeholder { color: $border; }
-
-         }
-
-         .icon-search {
-            background-image: url('../img/icon-search.png');
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 1em;
-            left: 0;
-            background-size: contain;
-            width: 2em;
-            height: 2em;
-         }
-      } // .input-wrapper
-   } // header
-
-   .beer-desc { 
-      margin: 1em auto;
-      padding: .1em .5em;
-      max-width: 500px;
-      background-color: $description;
-      border: solid 1px $border; 
-   }
+.beer {
+  border: 2px solid #333;
+  margin: 1.65%;
+  height: 180px;
+  padding: 0.5%;
+  background-color: #3a4625;
+  color: white;
+  border-radius: 3px;
+  @include span-columns(2);
+  text-align: center;
+  h2 {
+    margin: 1%;
+  }
+}
+.drops {
+  @include span-columns(6);
+  border: 2px solid #333;
+  border-radius: 3px;
+  text-align: center;
+  height: 230px;
+  font-size: 40px;
+  color: rgba(#ffffff, 0.52);
+  padding-top: 2%;
+}
+#adding {
+  background-color: #004f29;
+}
+#deleting {
+  background-color: #554a3f;
+}
+html {
+  background-color: #f6cc30;
+  font-family: $helvetica;
+}
+body {
+  @include outer-container;
+}
+h1 {
+  text-align: center;
+  font-size: 80px;
+  color: #2d2d2d;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+h1::first-letter {
+  font-size: 95px;
 }

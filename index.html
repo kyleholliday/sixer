@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-   <title>Sixer</title>
+<html>
 
-   <link type="text/css" rel="stylesheet" href="css/style.css">
-   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-   
-   <script src="http://underscorejs.org/underscore-min.js"></script>
-   
-   <script src="js/app.js"></script>
-   <script src="js/addForm.js"></script>
-   
-   <script type="text/template" id="beer-template">   
-      <h2><%= name %></h2>
-      <h4><%= type %></h4>
-   </script>
+<head>
+  <title>SIXER</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script type="text/template" id="beer-template">
+
+    <div class="beer">
+      <h2>
+        <%= name %>
+      </h2>
+      <p>
+        <%= brewery %>
+      </p>
+      <p>
+        <%= type %>
+      </p>
+
+    </div>
+
+  </script>
 </head>
+
 <body>
+
    <header>
       <h1>Sixer</h1>
       <div class="logo-wrapper">
@@ -41,4 +51,5 @@
       <input type="text" id="beer-style" placeholder="What is the beer's style?">
    </section>
 </body>
+
 </html>
