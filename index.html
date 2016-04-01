@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   <title></title>
-   <script src="js/app.js"></script>
+  <title>SIXER</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script type="text/template" id="beer-template">
+
+    <div class="beer">
+      <h2>
+        <%= name %>
+      </h2>
+      <p>
+        <%= brewery %>
+      </p>
+      <p>
+        <%= type %>
+      </p>
+
+    </div>
+
+  </script>
 </head>
+
 <body>
 
+  <h1>SIXER</h1>
+  <div id="main">
+    <a href="#home.html">Home</a>
+    <a href="#page2.html">Create a Beer</a>
+  </div>
+  <div id="uno">
+    <section id="results ">
+    </section>
+  </div>
+
+  <div id="great">
+    <div id="adding" class="drops">Add to My Sixer</div>
+    <div id="deleting" class="drops">Drop from My Sixer</div>
+  </div>
+
 </body>
+
 </html>

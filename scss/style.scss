@@ -1,15 +1,52 @@
 @import 'normalize/import-now';
 @import 'bourbon/bourbon';
-@import 'neat/neat.scss';
-
-//___ COLORS: ___________________________________
-
-
-
-
+@import 'neat/neat.scss'; //___ COLORS: ___________________________________
 //___ MIXINS: ___________________________________
-
-
-
 /*___________________ STYLES ___________________*/
-
+.beer {
+  border: 2px solid #333;
+  margin: 1.65%;
+  height: 180px;
+  padding: 0.5%;
+  background-color: #3a4625;
+  color: white;
+  border-radius: 3px;
+  @include span-columns(2);
+  text-align: center;
+  h2 {
+    margin: 1%;
+  }
+}
+.drops {
+  @include span-columns(6);
+  border: 2px solid #333;
+  border-radius: 3px;
+  text-align: center;
+  height: 230px;
+  font-size: 40px;
+  color: rgba(#ffffff, 0.52);
+  padding-top: 2%;
+}
+#adding {
+  background-color: #004f29;
+}
+#deleting {
+  background-color: #554a3f;
+}
+html {
+  background-color: #f6cc30;
+  font-family: $helvetica;
+}
+body {
+  @include outer-container;
+}
+h1 {
+  text-align: center;
+  font-size: 80px;
+  color: #2d2d2d;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+h1::first-letter {
+  font-size: 95px;
+}
