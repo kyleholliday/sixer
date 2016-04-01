@@ -27,21 +27,29 @@
 
 <body>
 
-  <h1>SIXER</h1>
-  <div id="main">
-    <a href="#home.html">Home</a>
-    <a href="#page2.html">Create a Beer</a>
-  </div>
-  <div id="uno">
-    <section id="results ">
-    </section>
-  </div>
-
-  <div id="great">
-    <div id="adding" class="drops">Add to My Sixer</div>
-    <div id="deleting" class="drops">Drop from My Sixer</div>
-  </div>
-
+   <header>
+      <h1>Sixer</h1>
+      <div class="logo-wrapper">
+         <div id="main-logo"></div>
+      </div>
+      
+      <div class="input-wrapper">
+         <!-- text search -->
+         <label for="search" class="icon-search"></label>
+         <input type="search" id="search" placeholder="There's a brew out there for you...">
+         <!-- radio buttons -->
+         <label for="radio-ale">Ale</label>
+         <input type="radio" id="radio-ale" name="beer-type" value="ale">
+         <label for="radio-lager">Lager</label>
+         <input type="radio" id="radio-lager" name="beer-type" value="lager">
+      </div>
+   </header>
+   <section id="new-beer">
+      <!-- ID assignment by system -->
+      <input type="text" id="beer-name" placeholder="What's the beer's name?">
+      <input type="text" id="beer-brewery" placeholder="Which brewery did it come from?">
+      <input type="text" id="beer-style" placeholder="What is the beer's style?">
+   </section>
 </body>
 
 </html>
