@@ -3,6 +3,15 @@
 @import 'neat/neat.scss'; //___ COLORS: ___________________________________
 //___ MIXINS: ___________________________________
 /*___________________ STYLES ___________________*/
+input[type='text'] {
+  margin-left: 1%;
+  padding: 0.5%;
+  font-size: 1.5em;
+  width: 50%;
+}
+.hidden {
+  display: none;
+}
 .beer {
   border: 2px solid #333;
   margin: 1.65%;
@@ -26,6 +35,10 @@
   font-size: 40px;
   color: rgba(#ffffff, 0.52);
   padding-top: 2%;
+  margin-top: 2%;
+}
+.buttons {
+  padding: 2%;
 }
 #adding {
   background-color: #004f29;
