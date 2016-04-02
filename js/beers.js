@@ -28,4 +28,34 @@ module.exports = [{
   name: 'Alter Ego',
   brewery: 'Smartmouth',
   type: 'Saison',
+}, {
+  id: 6,
+  name: 'Alter Ego',
+  brewery: 'Smartmouth',
+  type: 'Saison',
+}, {
+  id: 7,
+  name: 'Alter Ego',
+  brewery: 'Smartmouth',
+  type: 'Saison',
+}, {
+  id: 8,
+  name: 'Alter Ego',
+  brewery: 'Smartmouth',
+  type: 'Saison',
+}, {
+  id: 9,
+  name: 'Alter Ego',
+  brewery: 'Smartmouth',
+  type: 'Saison',
+}, {
+  id: 10,
+  name: 'Alter Ego',
+  brewery: 'Smartmouth',
+  type: 'Saison',
+}, {
+  id: 11,
+  name: 'Alter Ego',
+  brewery: 'Smartmouth',
+  type: 'Saison',
 }];
