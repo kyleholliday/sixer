@@ -1,3 +1,4 @@
+
 window.addEventListener('load', function() {
   var _ = require('underscore');
   var data = require('./beers');
@@ -39,4 +40,5 @@ window.addEventListener('load', function() {
       containment: 'window',
     });
   });
+
 });

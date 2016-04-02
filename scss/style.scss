@@ -1,5 +1,6 @@
 @import 'normalize/import-now';
 @import 'bourbon/bourbon';
+<<<<<<< HEAD
 @import 'neat/neat.scss'; //___ COLORS: ___________________________________
 //___ MIXINS: ___________________________________
 /*___________________ STYLES ___________________*/
@@ -12,6 +13,10 @@ input[type='text'] {
 .hidden {
   display: none;
 }
+=======
+@import 'neat/neat.scss';
+
+>>>>>>> master
 .beer {
   border: 2px solid #333;
   margin: 1.65%;
