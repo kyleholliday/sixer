@@ -1,7 +1,13 @@
 @import 'normalize/import-now';
 @import 'bourbon/bourbon';
 @import 'neat/neat';
-
+html {
+  background-color: #f6cc30;
+  font-family: 'Ubuntu', sans-serif;
+}
+body {
+  @include outer-container;
+}
 input[type="text"] {
   margin-left: 1%;
   padding: 0.5%;
@@ -11,7 +17,48 @@ input[type="text"] {
 .hidden {
   display: none;
 }
-
+#navbar ul {
+  margin: 2.5% 0 0;
+  overflow: hidden;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+  float: right;
+  width: 400px;
+  display: flex;
+  justify-content: flex-end;
+}
+#navbar li {
+  display: inline;
+  float: right;
+  text-align: center;
+  border: 2px solid black;
+  margin-right: 5%;
+  font-size: 30px;
+  border-radius: 3px;
+}
+#navbar li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #cfa60d;
+  color: black;
+}
+#navbar li a:hover {
+  background-color: white;
+  color: black;
+}
+h1 {
+  font-size: 80px;
+  color: #2d2d2d;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+h1::first-letter {
+  font-size: 95px;
+}
 .beer {
   border: 2px solid #333;
   margin: 1.65%;
@@ -26,40 +73,26 @@ input[type="text"] {
     margin: 1%;
   }
 }
-.drops {
-  @include span-columns(6);
+#searchdiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+#great {
+  @include outer-container;
+  box-sizing: border-box;
+}
+#adding {
+  background-color: #004f29;
+  @include span-columns(8);
+  @include shift(2);
   border: 2px solid #333;
   border-radius: 3px;
   text-align: center;
-  height: 230px;
+  height: 400px;
   font-size: 40px;
   color: rgba(#ffffff, 0.52);
   padding-top: 2%;
   margin-top: 2%;
-}
-.buttons {
-  padding: 2%;
-}
-#adding {
-  background-color: #004f29;
-}
-#deleting {
-  background-color: #554a3f;
-}
-html {
-  background-color: #f6cc30;
-  font-family: $helvetica;
-}
-body {
-  @include outer-container;
-}
-h1 {
-  text-align: center;
-  font-size: 80px;
-  color: #2d2d2d;
-  margin-bottom: 1%;
-  margin-top: 1%;
-}
-h1::first-letter {
-  font-size: 95px;
 }

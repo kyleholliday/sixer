@@ -1,4 +1,3 @@
-
 window.addEventListener('load', function() {
   var _ = require('underscore');
   var data = require('./beers');
@@ -37,7 +36,7 @@ window.addEventListener('load', function() {
     $('#results div').draggable({
       appendTo: "body",
       helper: "clone",
-      containment: 'window',
+      containment: 'document',
     });
   });
 
