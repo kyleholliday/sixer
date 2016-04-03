@@ -42,6 +42,6 @@ gulp.task('default', ['html', 'sass', 'js', 'img']);
 
 gulp.task('watch', function() {
   gulp.watch('./*html', ['html']);
-  gulp.watch('./scss/*.scss', ['css']);
+  gulp.watch('./scss/*.scss', ['sass']);
   gulp.watch('./js/*.js', ['js']);
 });

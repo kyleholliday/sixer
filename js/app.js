@@ -54,9 +54,14 @@ window.addEventListener('load', function() {
       });
       $(function() {
          $('#results div').draggable({
-            appendTo: "body",
             helper: "clone",
-            containment: 'window',
+            containment: 'document',
+         });
+         $('.sixpacktop').droppable({
+            tolerance: 'fit',
+            drop: function(event, ui) {
+               console.log('Dropped');
+            }
          });
       });
 
