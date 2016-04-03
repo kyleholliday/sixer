@@ -58,6 +58,7 @@ var add = function() {
    });
 };
 
+// export zee module!!
 module.exports = {
    val: val,
    Beer: Beer,
