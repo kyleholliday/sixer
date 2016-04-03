@@ -32,12 +32,12 @@ window.addEventListener('load', function() {
       }
     }
   });
-  $(function() {
-    $('#results div').draggable({
-      appendTo: "body",
-      helper: "clone",
-      containment: 'document',
-    });
+  $('#results div').draggable({
+    appendTo: "body",
+    helper: "clone",
+    containment: 'document',
   });
-
+  // $('#adding').droppable({
+  //
+  // });
 });
