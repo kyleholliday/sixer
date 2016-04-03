@@ -37,28 +37,29 @@ window.addEventListener('load', function() {
          parent.appendChild(create);
       }
 
+      // KYLE ==> this is the search bar
+      var search = document.getElementById('search-box');
+      search.addEventListener('keyup', function() {
+         var text = search.value;
+         var input = new RegExp(text, "i");
+         //searching through the beers
+         for (var i = 0; i < idList.length; i++) {
+            var element = document.getElementById('beer-' + beer[idList[i]].id);
+            if (input.test(beer[idList[i]].name)) {
+               element.classList.remove('hidden');
+            } else {
+               element.classList.add('hidden');
+            }
+         }
+      });
+      $(function() {
+         $('#results div').draggable({
+            appendTo: "body",
+            helper: "clone",
+            containment: 'window',
+         });
+      });
+
    });
-/*
-  var search = document.getElementById('search-box');
-  search.addEventListener('keyup', function() {
-    var text = search.value;
-    var input = new RegExp(text, "i");
-    //searching through the beers
-    for (var i = 0; i < data.length; i++) {
-      var element = document.getElementById('type-' + data[i].id);
-      if (input.test(data[i].name)) {
-        element.classList.remove('hidden');
-      } else {
-        element.classList.add('hidden');
-      }
-    }
-  });
-  $(function() {
-    $('#results div').draggable({
-      appendTo: "body",
-      helper: "clone",
-      containment: 'window',
-    });
-  });*/
 
 });
