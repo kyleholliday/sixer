@@ -1,14 +1,17 @@
 
+var _ = require('./underscore');
+var Firebase = require('./firebase');
+var addBeer = require('./addBeer');
+
 window.addEventListener('load', function() {
-  var _ = require('underscore');
-  var data = require('./beers');
+
   var beerTemplate = _.template(document.getElementById('beer-template').textContent);
 
   for (var i = 0; i < data.length; i++) {
     var beers = beerTemplate({
       name: data[i].name,
       brewery: data[i].brewery,
-      type: data[i].type,
+      type: data[i].style,
     });
     // creating the id's
     var create = document.createElement('div');
@@ -40,5 +43,8 @@ window.addEventListener('load', function() {
       containment: 'window',
     });
   });
+
+  // add beer submit button on create page (create.html) writes form data to firebase
+  document.getElementById('btn-add-beer').addEventListener('click', addBeer.add);
 
 });
