@@ -1,62 +1,65 @@
 
-module.exports = {
+// validate and format user input
+var val = function(str) {
+   str = str.trim();
+   str = str.toLowerCase();
+   
+   // escape HTML
+   var div = document.createElement('div');
+   div.appendChild(document.createTextNode(str));
+   str = div.innerHTML;
 
-   // validate and format user input
-   val: function(str) {
-      str = str.trim();
-      str = str.toLowerCase();
-      
-      // escape HTML
-      var div = document.createElement('div');
-      div.appendChild(document.createTextNode(str));
-      str = div.innerHTML;
-
-      var array = str.split(' ');
-      var result = '';
-      array.map(function(word) {
-         if (word !== '' && word.charAt(0) !== '&') { 
-            result += word.charAt(0).toUpperCase() + word.substr(1) + ' '; 
-         }
-      });
-      return result.trim();
-   },
-   // create random id
-   randomId: function() {
-      var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      var id = '';
-      for (var i = 0; i < 6; i++) {
-         id += chars.charAt(Math.round(Math.random() * chars.length));
+   var array = str.split(' ');
+   var result = '';
+   array.map(function(word) {
+      if (word !== '' && word.charAt(0) !== '&') {
+         result += word.charAt(0).toUpperCase() + word.substr(1) + ' '; 
       }
-      return id;
-   },
-   // constructor for Beer - auto-increment id with closure in constructor
-   Beer: function(name, brewery, style) {
-      this.id = this.randomId();
-      this.name = name;
-      this.brewery = brewery;
-      this.style = style;
+   });
+   return result.trim();
+};
 
-      return this;
-   },
-   // function to add beer on button click (submit button)
-   add: function() {
-      // capture valid, formatted values from user
-      var beerName = document.getElementById('beer-name');
-      var beerBrewery = document.getElementById('beer-brewery');
-      var beerStyle = document.getElementById('beer-style');
+// function return object w/specified parameters & random generated id
+var Beer = function(name, brewery, style) {
+   function id() {
+         var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+         var id = '';
+         for (var i = 0; i < 6; i++) {
+            id += chars.charAt(Math.round(Math.random() * chars.length));
+         }
+         return id;
+      }
+   return {
+      id: id(),
+      name: name,
+      brewery: brewery,
+      style: style
+   };
+};
 
-      var beer = new Beer(this.val(beerName.value), this.val(beerBrewery.value), this.val(beerStyle.value));
+// function to add beer on button click (submit button)
+var add = function() {
+   // capture valid, formatted values from user
+   var beerName = document.getElementById('beer-name');
+   var beerBrewery = document.getElementById('beer-brewery');
+   var beerStyle = document.getElementById('beer-style');
 
-      // write data to Firebase
-      var write = new Firebase('https://sixer.firebaseio.com/beer/' + beer.id);
-      write.set(beer, function() {
-         // display message to user that data has been saved
+   var beer = Beer(val(beerName.value), val(beerBrewery.value), val(beerStyle.value));
+
+   // write data to Firebase
+   var write = new Firebase('https://sixer.firebaseio.com/beer/' + beer.id);
+   write.set(beer, function() {
+      // display message to user that data has been saved
       
       // clear input values
       beerName.value = '';
       beerBrewery.value = '';
       beerStyle.value = '';
-      });
-   }
+   });
+};
 
+module.exports = {
+   val: val,
+   Beer: Beer,
+   add: add
 };
