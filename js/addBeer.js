@@ -1,6 +1,8 @@
 
+var Firebase = require('firebase');
+
 // validate and format user input
-var val = function(str) {
+function val(str) {
    str = str.trim();
    str = str.toLowerCase();
    
@@ -17,10 +19,10 @@ var val = function(str) {
       }
    });
    return result.trim();
-};
+}
 
 // function return object w/specified parameters & random generated id
-var Beer = function(name, brewery, style) {
+function Beer(name, brewery, style) {
    function id() {
          var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
          var id = '';
@@ -35,32 +37,31 @@ var Beer = function(name, brewery, style) {
       brewery: brewery,
       style: style
    };
-};
+}
 
-// function to add beer on button click (submit button)
-var add = function() {
-   // capture valid, formatted values from user
-   var beerName = document.getElementById('beer-name');
-   var beerBrewery = document.getElementById('beer-brewery');
-   var beerStyle = document.getElementById('beer-style');
+window.addEventListener('load', function() {
 
-   var beer = Beer(val(beerName.value), val(beerBrewery.value), val(beerStyle.value));
+   // submit button
+   var btn = document.getElementById('btn-add-beer');
+   btn.addEventListener('click', function() {
+      // capture valid, formatted values from user
+      var beerName = document.getElementById('beer-name');
+      var beerBrewery = document.getElementById('beer-brewery');
+      var beerStyle = document.getElementById('beer-style');
 
-   // write data to Firebase
-   var write = new Firebase('https://sixer.firebaseio.com/beer/' + beer.id);
-   write.set(beer, function() {
-      // display message to user that data has been saved
+      var beer = new Beer(val(beerName.value), val(beerBrewery.value), val(beerStyle.value));
+
+      // write data to Firebase
+      var write = new Firebase('https://sixer.firebaseio.com/beer/' + beer.id);
+      write.set(beer, function() {
+         // display message to user that data has been saved
       
       // clear input values
       beerName.value = '';
       beerBrewery.value = '';
       beerStyle.value = '';
-   });
-};
+      });
 
-// export zee module!!
-module.exports = {
-   val: val,
-   Beer: Beer,
-   add: add
-};
+   }); 
+
+});
