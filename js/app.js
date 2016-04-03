@@ -6,6 +6,7 @@ var getBeer = require('./getBeer');
 
 window.addEventListener('load', function() {
 
+  getBeer();
   
   var search = document.getElementById('search-box');
   search.addEventListener('keyup', function() {
