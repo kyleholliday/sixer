@@ -33,11 +33,13 @@ window.addEventListener('load', function() {
     }
   });
   $('#results div').draggable({
-    appendTo: "body",
     helper: "clone",
     containment: 'document',
   });
-  // $('#adding').droppable({
-  //
-  // });
+  $('.sixpacktop').droppable({
+    tolerance: "fit",
+    drop: function(event, ui) {
+      console.log("Dropped");
+    }
+  });
 });

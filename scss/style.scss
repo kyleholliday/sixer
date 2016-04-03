@@ -8,6 +8,40 @@ html {
 body {
   @include outer-container;
 }
+#tophalf {
+  @include span-columns(8);
+  @include shift(2);
+  display: flex;
+  box-sizing: border-box;
+}
+#bottomhalf {
+  @include span-columns(8);
+  @include shift(2);
+  display: flex;
+  box-sizing: border-box;
+}
+.sixpacktop {
+  border: 2px solid #333;
+  margin: 1%;
+  height: 200px;
+  padding: 0.5%;
+  background-color: #606654;
+  color: white;
+  border-radius: 3px;
+  @include span-columns(2 of 6);
+  text-align: center;
+}
+.sixpackbottom {
+  border: 2px solid #333;
+  margin: 1%;
+  height: 200px;
+  padding: 0.5%;
+  background-color: #606654;
+  color: white;
+  border-radius: 3px;
+  @include span-columns(2 of 6);
+  text-align: center;
+}
 input[type="text"] {
   margin-left: 1%;
   padding: 0.5%;
@@ -64,8 +98,9 @@ h1::first-letter {
 }
 .beer {
   border: 2px solid #333;
-  margin: 1.65%;
+  margin: 1.5%;
   height: 180px;
+  width: 176.42px;
   padding: 0.5%;
   background-color: #4a5535;
   color: white;
@@ -77,25 +112,13 @@ h1::first-letter {
   }
 }
 #searchdiv {
-  display: flex;
-  justify-content: center;
   margin-top: 2%;
   margin-bottom: 0.5%;
+  @include span-columns(12);
+  display: flex;
+  justify-content: center;
 }
 #great {
   @include outer-container;
   box-sizing: border-box;
-}
-#adding {
-  background-color: #7f935b;
-  @include span-columns(8);
-  @include shift(2);
-  border: 2px solid #333;
-  border-radius: 3px;
-  text-align: center;
-  height: 400px;
-  font-size: 40px;
-  color: white;
-  padding-top: 2%;
-  margin-top: 2%;
 }
