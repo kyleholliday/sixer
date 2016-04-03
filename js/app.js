@@ -2,6 +2,7 @@
 var _ = require('underscore');
 var Firebase = require('firebase');
 var addBeer = require('./addBeer');
+var getBeer = require('./getBeer');
 
 window.addEventListener('load', function() {
 
