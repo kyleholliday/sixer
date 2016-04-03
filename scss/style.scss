@@ -122,3 +122,8 @@ h1::first-letter {
   @include outer-container;
   box-sizing: border-box;
 }
+#info {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-left: 32%;
+}
