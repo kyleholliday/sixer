@@ -5,7 +5,7 @@ var gulpBrowser = require("gulp-browser");
 var uglify = require('gulp-uglify');
 
 gulp.task('html', function() {
-  return gulp.src('./index.html')
+  return gulp.src('./*.html')
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
@@ -26,9 +26,9 @@ gulp.task('sass:watch', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src('./js/app.js')
+  return gulp.src('./js/*.js')
     .pipe(gulpBrowser.browserify())
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./public/js/'));
 });
 
