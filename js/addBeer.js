@@ -63,7 +63,7 @@ window.addEventListener('load', function() {
       beerBrewery.value = '';
       beerStyle.value = '';
       
-      // show success message when adding to db
+      // display success message when adding to db
       var success = document.getElementById('success');
       success.classList.remove('hidden');
 
