@@ -3,22 +3,36 @@
 <head>
    <title>SIXER</title>
    <link rel="stylesheet" href="css/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
    <script src="js/addBeer.js"></script>
 </head>
-<body id="body">
+<body>
+   <div id="navbar">
+      <h1>SIXER</h1>
+      <ul>
+         <li><a href="index.html" id="home" class="buttons">Home</a></li>
+      </ul>
+   </div>
 
    <form>
-      <label for="beer-name">Beer:</label>
-      <input type="text" id="beer-name" placeholder="What's the name of the beer...?">
+      <div class="input-wrapper">
+         <label for="beer-name">Beer:</label>
+         <input type="text" id="beer-name" placeholder="Name that beer!">
+      </div>
       
-      <label for="beer-brewery">Brewery:</label>
-      <input type="text" id="beer-brewery" placeholder="What's the name of the brewery...?">
-
-      <label for="beer-style">Style:</label>
-      <input type="text" id="beer-style" placeholder="What style is the beer...?">
-
+      <div class="input-wrapper">
+         <label for="beer-brewery">Brewery:</label>
+         <input type="text" id="beer-brewery" placeholder="Who makes it?">
+      </div>
+      
+      <div class="input-wrapper">
+         <label for="beer-style">Style:</label>
+         <input type="text" id="beer-style" placeholder="What style is it?">
+      </div>
+      
       <input type="button" id="btn-add-beer" value="Add Beer">
    </form>
+   <p id="success" class="hidden">Congratulations! You've added this beer to the database!</p>
 
 </body>
 </html>
