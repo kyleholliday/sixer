@@ -18,6 +18,9 @@ function val(str) {
          result += word.charAt(0).toUpperCase() + word.substr(1) + ' '; 
       }
    });
+   if (result.indexOf('Ipa') > -1) {
+      result = result.replace(/Ipa/, 'IPA');
+   }
    return result.trim();
 }
 
@@ -53,14 +56,21 @@ window.addEventListener('load', function() {
 
       // write data to Firebase
       var write = new Firebase('https://sixer.firebaseio.com/beer/' + beer.id);
-      write.set(beer, function() {
-         // display message to user that data has been saved
+      write.set(beer, function() { });
       
       // clear input values
       beerName.value = '';
       beerBrewery.value = '';
       beerStyle.value = '';
-      });
+      
+      // show success message when adding to db
+      var success = document.getElementById('success');
+      success.classList.remove('hidden');
+
+      // hide success message after 5 sec
+      setTimeout(function() {
+         success.classList.add('hidden');
+      }, 5000);
 
    }); 
 
