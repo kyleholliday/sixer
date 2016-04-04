@@ -1,29 +1,29 @@
 {
-   "name": "sixer",
-   "version": "1.0.0",
-   "description": "Wrap your lips around the six pack of your dreams!",
-   "main": "gulpfile.js",
-   "dependencies": {
-      "gulp": "^3.9.1",
-      "gulp-sass": "^2.2.0",
-      "gulp-browser": "^1.1.1",
-      "gulp-htmlmin": "^1.3.0",
-      "gulp-uglify": "^1.5.3",
-      "underscore": "^1.8.3",
-      "firebase": "^2.4.2"
-   },
-   "devDependencies": {},
-   "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/wheatbrad/sixer.git"
-   },
-   "author": "Brad Runnels & Kyle Holliday",
-   "license": "ISC",
-   "bugs": {
-      "url": "https://github.com/wheatbrad/sixer/issues"
-   },
-   "homepage": "https://github.com/wheatbrad/sixer#readme"
+  "name": "sixer",
+  "version": "1.0.0",
+  "description": "Wrap your lips around the six pack of your dreams!",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "firebase": "^2.4.2",
+    "gulp": "^3.9.1",
+    "gulp-browser": "^1.1.1",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wheatbrad/sixer.git"
+  },
+  "author": "Brad Runnels & Kyle Holliday",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wheatbrad/sixer/issues"
+  },
+  "homepage": "https://github.com/wheatbrad/sixer#readme"
 }
